@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student – Library</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <nav class="navbar">
+    <h1>📚 Library Management</h1>
+    <span class="nav-role">Student</span>
+    <button class="btn-logout" id="logout-btn">Logout</button>
+  </nav>
+
+  <div class="page-wrapper">
+    <div class="card">
+      <h2>My Fine</h2>
+      <p class="fine-label">Outstanding fine amount</p>
+      <p class="fine-display">₹<span id="fine-amount">—</span></p>
+    </div>
+
+    <div class="card">
+      <h2>Search Books</h2>
+      <div class="form-row">
+        <div class="form-group">
+          <label>Search by title or author</label>
+          <input type="text" id="search-input" placeholder="e.g. Harry Potter">
+        </div>
+        <button class="btn btn-primary" id="search-btn">Search</button>
+      </div>
+      <div id="search-results" style="margin-top: 15px;"></div>
+    </div>
+
+    <div class="card">
+      <h2>My Issued Books</h2>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Title</th>
+              <th>Issue Date</th>
+              <th>Return Date</th>
+              <th>Fine/Day</th>
+            </tr>
+          </thead>
+          <tbody id="my-books-tbody">
+            <tr class="empty-row"><td colspan="5">Loading…</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  <script src="/js/student.js"></script>
+</body>
+</html>

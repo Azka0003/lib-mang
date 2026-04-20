@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Staff – Library</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <nav class="navbar">
+    <h1>📚 Library Management</h1>
+    <span class="nav-role">Staff</span>
+    <button class="btn-logout" id="logout-btn">Logout</button>
+  </nav>
+
+  <div class="page-wrapper">
+    <div class="card">
+      <h2>Add Book</h2>
+      <form id="add-book-form">
+        <div class="form-row">
+          <div class="form-group">
+            <label>Title</label>
+            <input type="text" id="book-title" placeholder="Book title" required>
+          </div>
+          <div class="form-group">
+            <label>Author</label>
+            <input type="text" id="book-author" placeholder="Author name" required>
+          </div>
+          <div class="form-group">
+            <label>ISBN</label>
+            <input type="text" id="book-isbn" placeholder="ISBN">
+          </div>
+          <div class="form-group" style="max-width:120px">
+            <label>Total Copies</label>
+            <input type="number" id="book-copies" placeholder="1" min="1" required>
+          </div>
+          <button class="btn btn-primary" type="submit">Add Book</button>
+        </div>
+      </form>
+      <p id="add-book-msg" class="msg"></p>
+    </div>
+
+    <div class="card">
+      <h2>Issue Book to Student</h2>
+      <form id="issue-book-form">
+        <div class="form-row">
+          <div class="form-group">
+            <label>Book ID</label>
+            <input type="text" id="issue-book-id" placeholder="Book _id" required>
+          </div>
+          <div class="form-group">
+            <label>Student ID</label>
+            <input type="text" id="issue-student-id" placeholder="Student _id" required>
+          </div>
+          <button class="btn btn-success" type="submit">Issue Book</button>
+        </div>
+      </form>
+      <p id="issue-book-msg" class="msg"></p>
+    </div>
+
+    <div class="card">
+      <h2>Currently Issued Books</h2>
+      <div class="table-wrap">
+        <table id="issued-table">
+          <thead>
+            <tr>
+              <th>Issued ID</th>
+              <th>Book Title</th>
+              <th>Student</th>
+              <th>Issue Date</th>
+              <th>Return Date</th>
+              <th>Fine/Day</th>
+            </tr>
+          </thead>
+          <tbody id="issued-tbody">
+            <tr class="empty-row"><td colspan="6">Loading…</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  <script src="/js/staff.js"></script>
+</body>
+</html>

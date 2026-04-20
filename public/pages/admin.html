@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin – Library</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <nav class="navbar">
+    <h1>📚 Library Management</h1>
+    <span class="nav-role">Administrator</span>
+    <button class="btn-logout" id="logout-btn">Logout</button>
+  </nav>
+
+  <div class="page-wrapper">
+    <div class="card">
+      <h2>Add Staff</h2>
+      <form id="add-staff-form">
+        <div class="form-row">
+          <div class="form-group">
+            <label>Name</label>
+            <input type="text" id="staff-name" placeholder="Full name" required>
+          </div>
+          <div class="form-group">
+            <label>Email</label>
+            <input type="email" id="staff-email" placeholder="staff@email.com" required>
+          </div>
+          <div class="form-group">
+            <label>Password</label>
+            <input type="password" id="staff-password" placeholder="••••••" required>
+          </div>
+          <button class="btn btn-primary" type="submit">Add Staff</button>
+        </div>
+      </form>
+      <p id="staff-msg" class="msg"></p>
+    </div>
+
+    <div class="card">
+      <h2>Set Fine Per Day</h2>
+      <form id="set-fine-form">
+        <div class="form-row">
+          <div class="form-group">
+            <label>Issued Book ID</label>
+            <input type="text" id="fine-issued-id" placeholder="IssuedBook _id" required>
+          </div>
+          <div class="form-group">
+            <label>Fine Per Day (₹)</label>
+            <input type="number" id="fine-amount" placeholder="e.g. 5" min="0" required>
+          </div>
+          <button class="btn btn-primary" type="submit">Set Fine</button>
+        </div>
+      </form>
+      <p id="fine-msg" class="msg"></p>
+    </div>
+
+    <div class="card">
+      <h2>Set Return Date</h2>
+      <form id="set-return-form">
+        <div class="form-row">
+          <div class="form-group">
+            <label>Issued Book ID</label>
+            <input type="text" id="return-issued-id" placeholder="IssuedBook _id" required>
+          </div>
+          <div class="form-group">
+            <label>Return Date</label>
+            <input type="date" id="return-date" required>
+          </div>
+          <button class="btn btn-primary" type="submit">Set Date</button>
+        </div>
+      </form>
+      <p id="return-msg" class="msg"></p>
+    </div>
+  </div>
+  <script src="/js/admin.js"></script>
+</body>
+</html>
