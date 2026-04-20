@@ -40,6 +40,21 @@
       <p id="add-book-msg" class="msg"></p>
     </div>
 
+    <!-- FIX: Delete Book form was missing from HTML -->
+    <div class="card">
+      <h2>Delete Book</h2>
+      <form id="delete-book-form">
+        <div class="form-row">
+          <div class="form-group">
+            <label>Book ID</label>
+            <input type="text" id="delete-book-id" placeholder="Book _id" required>
+          </div>
+          <button class="btn btn-danger" type="submit">Delete Book</button>
+        </div>
+      </form>
+      <p id="delete-book-msg" class="msg"></p>
+    </div>
+
     <div class="card">
       <h2>Issue Book to Student</h2>
       <form id="issue-book-form">

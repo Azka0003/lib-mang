@@ -46,7 +46,8 @@
           </div>
           <div class="form-group">
             <label>Fine Per Day (₹)</label>
-            <input type="number" id="fine-amount" placeholder="e.g. 5" min="0" required>
+            <!-- FIX: id was "fine-amount" — conflicts with student page; renamed to "fine-per-day" -->
+            <input type="number" id="fine-per-day" placeholder="e.g. 5" min="0" required>
           </div>
           <button class="btn btn-primary" type="submit">Set Fine</button>
         </div>

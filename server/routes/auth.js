@@ -1,8 +1,8 @@
 const express = require('express');
-const router = express.Router();
-const bcrypt = require('bcrypt');
-const Admin = require('../models/Admin');
-const Staff = require('../models/Staff');
+const router  = express.Router();
+const bcrypt  = require('bcrypt');
+const Admin   = require('../models/Admin');
+const Staff   = require('../models/Staff');
 const Student = require('../models/Student');
 
 // POST /api/login
@@ -40,12 +40,13 @@ router.post('/login', async (req, res) => {
 
     // Set Session
     req.session.user = { id: user._id, role };
-    
-    // Redirect based on role
+
+    // FIX: Return JSON with redirect URL so fetch() on the frontend can handle it
     const redirectMap = { admin: '/admin', staff: '/staff', student: '/student' };
-    res.redirect(redirectMap[role]);
+    res.json({ redirect: redirectMap[role] });
 
   } catch (err) {
+    console.error(err);
     res.status(500).json({ message: 'Server error during login.' });
   }
 });
@@ -53,7 +54,7 @@ router.post('/login', async (req, res) => {
 // POST /api/logout
 router.post('/logout', (req, res) => {
   req.session.destroy(() => {
-    res.redirect('/');
+    res.json({ redirect: '/' });
   });
 });
 
